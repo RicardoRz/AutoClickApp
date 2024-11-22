@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.autoclickapp">
+
+    <!-- Permiso para superponer otras aplicaciones -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:label="AutoClickApp"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:icon="@mipmap/ic_launcher">
+
+        <!-- Actividad principal -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad del autoclicker -->
+        <activity android:name=".AutoClickerActivity"
+            android:exported="true" />
+
+        <!-- Servicio de la burbuja flotante -->
+        <service
+            android:name=".FloatingBubbleService"
+            android:exported="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    </application>
+
+</manifest>
